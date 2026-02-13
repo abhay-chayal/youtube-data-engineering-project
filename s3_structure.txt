@@ -1,0 +1,33 @@
+S3 Data Lake Structure
+
+Bucket Name: youtube-data-engineering-bucket
+
+youtube-data-engineering-bucket/
+│
+├── raw/
+│   └── statistics/
+│       ├── region=us/
+│       ├── region=in/
+│       ├── region=gb/
+│
+├── cleansed/
+│   └── statistics_parquet/
+│       ├── region=us/
+│       ├── region=in/
+│       ├── region=gb/
+│
+└── curated/
+    └── analytics_ready/
+        ├── region=us/
+        ├── region=in/
+        ├── region=gb/
+
+Explanation:
+- raw/ → Original JSON files uploaded
+- cleansed/ → Converted Parquet files
+- curated/ → Partitioned & analytics-ready data
+- region partitioning improves Athena performance
+
+Data Source:
+	Kaggle youtube Dataset
+
